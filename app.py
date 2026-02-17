@@ -30,12 +30,15 @@ text-align:center;
 /* 20 */
 .number{
 position:absolute;
-top:8%;
+top:7%;
 left:50%;
 transform:translateX(-50%);
-font-size:90px;
+font-size:65px;
 font-weight:bold;
 text-shadow:0 0 25px rgba(255,255,255,0.8);
+display:flex;
+gap:12px;
+align-items:center;
 }
 
 /* SİMLER */
@@ -58,7 +61,7 @@ animation: twinkle 2s infinite ease-in-out;
 .cake{
 position:relative;
 width:180px;
-height:120px;
+height:140px;
 margin:auto;
 cursor:pointer;
 }
@@ -74,7 +77,7 @@ border-radius:20px;
 
 .layer2{
 position:absolute;
-bottom:50px;
+bottom:55px;
 left:20px;
 width:140px;
 height:50px;
@@ -84,7 +87,7 @@ border-radius:20px;
 
 .icing{
 position:absolute;
-bottom:95px;
+bottom:100px;
 left:30px;
 width:120px;
 height:30px;
@@ -94,7 +97,7 @@ border-radius:20px;
 
 .candle{
 position:absolute;
-bottom:120px;
+bottom:125px;
 left:85px;
 width:10px;
 height:40px;
@@ -103,7 +106,7 @@ background:white;
 
 .flame{
 position:absolute;
-bottom:160px;
+bottom:165px;
 left:80px;
 width:20px;
 height:25px;
@@ -159,7 +162,16 @@ transform:translateX(-50%) scale(0.9);
 
 <body>
 
-<div class="number">✨ 20 ✨</div>
+<!-- MÜZİK -->
+<audio id="bgMusic" autoplay loop>
+<source src="/static/music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="number">
+<span>✨</span>
+<span>20</span>
+<span>✨</span>
+</div>
 
 <div class="cake" onclick="blowCandle()">
 <div class="layer1"></div>
@@ -178,7 +190,12 @@ function surprise(){
 alert("BURAYA KENDİ MESAJINI YAZ");
 }
 
-/* MUM SÖNME */
+/* iPhone autoplay fallback */
+document.addEventListener("click", function(){
+document.getElementById("bgMusic").play();
+}, {once:true});
+
+/* MUM SÖNME + HAVAİ FİŞEK */
 function blowCandle(){
 let flame=document.getElementById("flame");
 flame.style.display="none";
@@ -209,7 +226,7 @@ document.body.appendChild(s);
 
 /* HAVAİ FİŞEK */
 function launchFireworks(){
-for(let i=0;i<40;i++){
+for(let i=0;i<60;i++){
 let fw=document.createElement("div");
 fw.style.position="absolute";
 fw.style.width="6px";
@@ -222,8 +239,8 @@ fw.style.transition="all 1s ease-out";
 document.body.appendChild(fw);
 
 setTimeout(()=>{
-fw.style.left=(50+Math.random()*40-20)+"%";
-fw.style.top=(50+Math.random()*40-20)+"%";
+fw.style.left=(50+Math.random()*50-25)+"%";
+fw.style.top=(50+Math.random()*50-25)+"%";
 fw.style.opacity="0";
 },10);
 
@@ -239,6 +256,6 @@ fw.remove();
 """
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=6060)
+    app.run(host="0.0.0.0", port=4444)
 
 
