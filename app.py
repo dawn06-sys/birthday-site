@@ -187,7 +187,7 @@ transform:translateX(-50%) scale(0.9);
 
 /* MESAJI BURADAN DEĞİŞTİR */
 function surprise(){
-alert("BURAYA KENDİ MESAJINI YAZ");
+alert("Bebeğimmm iyi ki doğdunn, iyi ki varsınnn. Nice senelerine sevgilimmm. Seni çookk seviyorum. Kocaman oldun... 20 oldun şaka maka. Seninle daha 70 leri 80 leri görücez bitanem. Hayatımızın en güzel zamanlarına giriyoruz. İnşallah yeni yaşın sana hak ettiğin her şeyi verir bitanem. Her şey çok güzel olucak ben inanıyorum. Size çok aşığım beyfendi. İyi ki doğdunuzz <3 <3 <3 ");
 }
 
 /* iPhone autoplay fallback */
@@ -259,6 +259,6 @@ import os
 
 if __name__ == "__main__":
     app.run()
-    
+
 
 
